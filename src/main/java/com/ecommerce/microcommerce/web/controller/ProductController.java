@@ -110,4 +110,9 @@ public class ProductController {
         }
         return null;
     }
+
+    @GetMapping(value = "/Produits/filter")
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+        return productDao.findAllByOrderByNomAsc();
+    }
 }
